@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	    <h1>Remove Duplicates from an array</h1>
+		<div id="output"></div>
+		<input type="button" name="" value="Close Window" onclick="closewin()">
+
+		<script type="text/javascript">
+			var array = ["Frrost","Nick","Prodroxx","Stallion","Hulk","Anddy","AMG","Frrost","Hulk"];
+			var cleanArray = removeDup(array);
+			output.innerHTML = array +"<br>"+cleanArray;
+
+			function removeDup(arr){
+				var cArray = [];
+				var cObject = {};
+				for (var i = 0; i < arr.length; i++) {
+					cObject[arr[i]] = "bla";
+				}
+				for(x in cObject){
+					cArray.push(x);
+				}
+				return cArray;
+				console.log(cArray);
+			}
+			function closewin(){
+				window.close();
+			}
+
+		</script>
+
+	</body>
+</html>
