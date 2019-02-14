@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+    }
+
+    td, th {
+     /* border: 1px solid #dddddd;*/
+      text-align: left;
+      padding: 8px;
+      border-style: solid;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    .td1 {
+        width: 25%;
+    }
+    </style>
+	</head>
+	<body>
+		<h1>JavaScript Jungle</h1>
+
+		<div class="" id="output"></div>
+
+
+
+
+		<script type="text/javascript">
+        var pData = [
+            ['shoppingList','Basic shoppingList','shoppingList.html'],
+            ['createElement','Basic shoppingList using createElement','createElement.html'],
+            ['shuggledArray','How to shuffle an array','shuffledArray.html'],
+            ['removeDuplicate','How to remove duplicate elements from an given array','removeDuplicate.html'],
+
+        ];
+
+        var html =   "<table> <tr> <th>Program</th><th>Discription</th> </tr>"
+        for (var i = 0; i < pData.length; i++) {
+            html += "<tr><td id = 'td' data-link='"+pData[i][2]+"' >"+pData[i][0]+"</td><td>"+pData[i][1]+"</td></tr>"
+            console.log(pData[i][1]);
+        }
+        html +="</table>";
+        document.getElementById("output").innerHTML = html;
+
+        var td = document.querySelectorAll('td');
+        var mywin;
+        var boo = false;
+        var preThis;
+        for (var i = 0; i < td.length; i++) {
+            //td[i].addEventListener('click',function(){});
+            td[i].onclick = function(){
+                    this.style.backgroundColor = "coral";
+
+                    if (boo) {
+                        mywin.close();
+                        preThis.style.backgroundColor = "white";
+                    }
+
+                	url = this.closest('[data-link]').getAttribute('data-link');
+                    mywin = window.open(url,"_blank","toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+                    boo = true;
+                    preThis = this;
+
+            }
+        }
+
+
+
+
+
+		</script>
+
+
+	</body>
+</html>
