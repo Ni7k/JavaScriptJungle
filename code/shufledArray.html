@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>Shuffled Array Function</h1>
+		<div id = "output1" >
+		</div>
+
+		<input type="button" onclick = "shuffle()" name="" value="">
+		<div id = "output2" >
+		</div>
+		<input type="button" name="" value="Close Window" onclick="closewin()">
+
+		<script type="text/javascript">
+		var array = ['a','b','c','d','e','f'];
+		var html;
+		var output1 = document.getElementById('output1');
+		for (var i = 0; i < array.length; i++) {
+			output1.innerHTML += array[i];
+			//output1.innerHTML= html;
+		}
+
+		function closewin(){
+			window.close();
+		}
+
+		</script>
+
+	</body>
+</html>
