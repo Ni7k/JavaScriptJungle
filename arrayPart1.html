@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>ARRAY</h1>
+		<div class=""> <h2>[
+    ['cat','dog','horse','fish'],
+    ['car','bike','truck'],
+    ['apple','orange','grapes'],
+	'man',
+	];</h2>
+ 	</div>
+	<div class="">
+		Search an element <input type="text" name="" value="" id="ele">
+		<input type="button" name="" value="Search" onclick="search()">
+	</div>
+
+	<div id="output"> </div>
+	<input type="button" name="" value="Close Window" onclick="closewin()">
+
+	<script type="text/javascript">
+		var arr = [
+	    ['cat','dog','horse','fish'],
+	    ['car','bike','truck'],
+	    ['apple','orange','grapes'],
+		'man',
+		];
+
+		var html = '';
+		var boo = false;
+
+		function search(){
+			var ele = document.getElementById('ele').value;
+			html = ele;
+			if (arr.indexOf(ele)>-1) {
+				html += ' as arr['+arr.indexOf(ele)+']';
+				boo = true;
+			}
+			else {
+				for (var i = 0; i < arr.length; i++) {
+					if (arr[i].indexOf(ele)>-1) {
+						html += ' as arr['+i+']['+arr[i].indexOf(ele)+']';
+						boo = true;
+					}
+				}
+				if (!boo) {
+					html = 'Choose from the above array';
+				}
+			}
+
+			console.log(html);
+			document.getElementById('output').innerHTML = html;
+
+		}
+		function closewin(){
+			window.close();
+		}
+	</script>
+</body>
+</html>
